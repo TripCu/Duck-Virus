@@ -14,7 +14,7 @@ public class DuckSprite extends JPanel {
     private final String passcode = "DIE"; // Replace with your actual passcode
 
     public DuckSprite() {
-        // Load the duck image with transparency
+        // Load the duck image with transcdparency
         try {
             duckImage = ImageIO.read(new File("C:\\Users\\wolfp\\IdeaProjects\\Duck boy\\src\\duck_sprite.png"));
         } catch (IOException e) {

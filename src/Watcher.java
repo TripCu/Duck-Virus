@@ -7,10 +7,10 @@ public class Watcher {
 
                 int exitCode = process.waitFor();
                 if (exitCode == 0) {
-                    break; // Exit the watcher loop
+                    break; // Correct password entered, do not restart
                 } else {
                     System.out.println("DuckSprite was closed unexpectedly. Restarting...");
-
+                    Thread.sleep(1000); // Brief delay before restarting
                 }
             } catch (Exception e) {
                 e.printStackTrace();

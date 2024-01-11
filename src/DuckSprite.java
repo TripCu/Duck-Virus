@@ -6,17 +6,18 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.*;
-import java.util.Random; // Additional import for Random
+import java.util.Random;
 
 public class DuckSprite extends JPanel {
     private Image duckImage;
     private Point mouseClickPoint;
     private JFrame topFrame;
-    private final String passcode = "DIE"; // Replace with your actual passcode
+    private final String passcode = "DIE";
 
-    // Timer for periodic updates and Random instance
     private Timer movementTimer;
     private Random random;
+    private int dx = 10; // Horizontal movement delta
+    private int dy = 10; // Vertical movement delta
 
     public DuckSprite() {
         // Load the duck image with transparency
@@ -24,17 +25,14 @@ public class DuckSprite extends JPanel {
             duckImage = ImageIO.read(new File("C:\\Users\\wolfp\\IdeaProjects\\Duck boy\\src\\duck_sprite.png"));
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle the error here
         }
-        setOpaque(false); // Make the JPanel transparent
+        setOpaque(false);
 
-        // Initialize random object for generating random positions
         random = new Random();
 
-        // Make the panel draggable
         MouseAdapter ma = new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
-                mouseClickPoint = e.getPoint(); // Remember the click point
+                mouseClickPoint = e.getPoint();
             }
 
             public void mouseDragged(MouseEvent e) {
@@ -54,12 +52,10 @@ public class DuckSprite extends JPanel {
     private void setupFrame(JFrame frame) {
         this.topFrame = frame;
 
-        // Start the timer for random movement here
-        int delay = 1000; // Delay in milliseconds (1 second)
-        movementTimer = new Timer(delay, e -> moveFrameRandomly());
+        int delay = 0; // Faster movement for smooth glide
+        movementTimer = new Timer(delay, e -> glideDuck());
         movementTimer.start();
 
-        // Set up the key listener for F12
         frame.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -67,30 +63,31 @@ public class DuckSprite extends JPanel {
                     setUIDarkTheme();
                     String userInput = JOptionPane.showInputDialog(frame, "Enter passcode to exit:");
                     if (passcode.equals(userInput)) {
-                        // Exit normally with a specific code indicating intentional closure
                         System.exit(0);
                     } else {
                         JOptionPane.showMessageDialog(frame, "Incorrect passcode.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-                    resetUIDefaults(); // Reset to the default theme
+                    resetUIDefaults();
                 }
             }
         });
     }
 
-    // Method to move the frame randomly
-    private void moveFrameRandomly() {
-        // Get screen dimensions
+    private void glideDuck() {
+        if (topFrame == null) return;
+
+        Point currentLocation = topFrame.getLocation();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = screenSize.width;
-        int screenHeight = screenSize.height;
 
-        // Randomly calculate new X and Y within screen bounds
-        int newX = random.nextInt(screenWidth - topFrame.getWidth());
-        int newY = random.nextInt(screenHeight - topFrame.getHeight());
+        if (currentLocation.x < 0 || currentLocation.x > screenSize.width - topFrame.getWidth()) {
+            dx = -dx; // Reverse horizontal direction
+        }
+        if (currentLocation.y < 0 || currentLocation.y > screenSize.height - topFrame.getHeight()) {
+            dy = -dy; // Reverse vertical direction
+        }
 
-        // Update the frame location
-        topFrame.setLocation(newX, newY);
+        currentLocation.translate(dx, dy);
+        topFrame.setLocation(currentLocation);
     }
 
     @Override
@@ -132,26 +129,16 @@ public class DuckSprite extends JPanel {
             JFrame frame = new JFrame();
             DuckSprite spritePanel = new DuckSprite();
 
-            // Remove the window's title bar and make sure it's always on top
             frame.setUndecorated(true);
             frame.setAlwaysOnTop(true);
-
-            // Add the sprite panel and set the size
             frame.add(spritePanel);
-            frame.setSize(300, 300); // Adjust size as needed
-            frame.setLocationRelativeTo(null); // Center the frame
-            frame.setBackground(new Color(0, 0, 0, 0)); // Transparent background for the frame
-
-            // Prevent the JFrame from closing when the user presses the close button
+            frame.setSize(300, 300);
+            frame.setLocationRelativeTo(null);
+            frame.setBackground(new Color(0, 0, 0, 0));
             frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
-            // Remove the program from the taskbar and alt-tab list
             frame.setType(Window.Type.UTILITY);
 
-            // Set up the frame for key listening and prevent closing
             spritePanel.setupFrame(frame);
-
-            // Make the frame visible
             frame.setVisible(true);
         });
     }

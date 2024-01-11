@@ -6,7 +6,6 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.*;
-import java.util.Random;
 
 public class DuckSprite extends JPanel {
     private Image duckImage;
@@ -15,9 +14,9 @@ public class DuckSprite extends JPanel {
     private final String passcode = "DIE";
 
     private Timer movementTimer;
-    private Random random;
     private int dx = 10; // Horizontal movement delta
     private int dy = 10; // Vertical movement delta
+    private boolean isMovementEnabled = true; // Flag to control movement
 
     public DuckSprite() {
         // Load the duck image with transparency
@@ -27,8 +26,6 @@ public class DuckSprite extends JPanel {
             e.printStackTrace();
         }
         setOpaque(false);
-
-        random = new Random();
 
         MouseAdapter ma = new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
@@ -52,14 +49,18 @@ public class DuckSprite extends JPanel {
     private void setupFrame(JFrame frame) {
         this.topFrame = frame;
 
-        int delay = 0; // Faster movement for smooth glide
-        movementTimer = new Timer(delay, e -> glideDuck());
-        movementTimer.start();
-
         frame.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_F12) {
+                if (e.getKeyCode() == KeyEvent.VK_F1) {
+                    isMovementEnabled = !isMovementEnabled; // Toggle movement
+                    if (isMovementEnabled) {
+                        movementTimer.start();
+                    } else {
+                        movementTimer.stop();
+                    }
+                }
+                else if (e.getKeyCode() == KeyEvent.VK_F12) {
                     setUIDarkTheme();
                     String userInput = JOptionPane.showInputDialog(frame, "Enter passcode to exit:");
                     if (passcode.equals(userInput)) {
@@ -71,10 +72,14 @@ public class DuckSprite extends JPanel {
                 }
             }
         });
+
+        int delay = 1; // Movement update delay
+        movementTimer = new Timer(delay, e -> glideDuck());
+        movementTimer.start();
     }
 
     private void glideDuck() {
-        if (topFrame == null) return;
+        if (!isMovementEnabled || topFrame == null) return;
 
         Point currentLocation = topFrame.getLocation();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

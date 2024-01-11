@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64130145-63ae-40f9-ae8a-7402e66c5a6e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="64130145-63ae-40f9-ae8a-7402e66c5a6e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +48,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -61,13 +62,21 @@
       <recent name="C:\Users\wolfp\IdeaProjects\Duck boy\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DuckSprite">
+    <configuration name="DuckSprite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DuckSprite" />
+      <module name="Duck boy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DuckSprite.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/src/DuckSprite.jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DuckSprite" />
         <item itemvalue="JAR Application.DuckSprite.jar" />
       </list>
     </recent_temporary>
@@ -90,7 +99,7 @@
       <workItem from="1704082447602" duration="1667000" />
       <workItem from="1704084142692" duration="355000" />
       <workItem from="1704939150614" duration="2078000" />
-      <workItem from="1704941271960" duration="740000" />
+      <workItem from="1704941271960" duration="1334000" />
     </task>
     <servers />
   </component>

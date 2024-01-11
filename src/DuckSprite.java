@@ -7,21 +7,21 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.event.*;
 
+
 public class DuckSprite extends JPanel {
     private Image duckImage;
     private Point mouseClickPoint;
     private JFrame topFrame;
     private final String passcode = "DIE";
-
     private Timer movementTimer;
-    private int dx = 10; // Horizontal movement delta
-    private int dy = 10; // Vertical movement delta
+    private int dx = 5; // Horizontal movement delta
+    private int dy = 5; // Vertical movement delta
     private boolean isMovementEnabled = true; // Flag to control movement
 
     public DuckSprite() {
         // Load the duck image with transparency
         try {
-            duckImage = ImageIO.read(new File("C:\\Users\\wolfp\\IdeaProjects\\Duck boy\\src\\duck_sprite.png"));
+            duckImage = ImageIO.read(new File("C:\\Users\\FrameUser\\Documents\\GitHub\\Duck-Virus\\src\\duck_sprite.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class DuckSprite extends JPanel {
             }
         });
 
-        int delay = 1; // Movement update delay
+        int delay = 10; // Movement update delay
         movementTimer = new Timer(delay, e -> glideDuck());
         movementTimer.start();
     }

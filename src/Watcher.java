@@ -3,6 +3,7 @@ public class Watcher {
         while (true) {
             try {
                 Process process = new ProcessBuilder(
+
                         "java", "-cp", System.getProperty("java.class.path"), "DuckSprite").start();
 
                 int exitCode = process.waitFor();

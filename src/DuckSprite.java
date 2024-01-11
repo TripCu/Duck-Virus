@@ -132,6 +132,25 @@ public class DuckSprite extends JPanel {
             JFrame frame = new JFrame();
             DuckSprite spritePanel = new DuckSprite();
 
+            // Remove the window's title bar and make sure it's always on top
+            frame.setUndecorated(true);
+            frame.setAlwaysOnTop(true);
+
+            // Add the sprite panel and set the size
+            frame.add(spritePanel);
+            frame.setSize(300, 300); // Adjust size as needed
+            frame.setLocationRelativeTo(null); // Center the frame
+            frame.setBackground(new Color(0, 0, 0, 0)); // Transparent background for the frame
+
+            // Prevent the JFrame from closing when the user presses the close button
+            frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+            // Remove the program from the taskbar and alt-tab list
+            frame.setType(Window.Type.UTILITY);
+
+            // Set up the frame for key listening and prevent closing
+            spritePanel.setupFrame(frame);
+
             // Make the frame visible
             frame.setVisible(true);
         });

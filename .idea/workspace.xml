@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="64130145-63ae-40f9-ae8a-7402e66c5a6e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DuckSprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DuckSprite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Movemeing",
+    "git-widget-placeholder": "Kill-me-now",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/wolfp/IdeaProjects/Duck boy/src",
     "node.js.detected.package.eslint": "true",
@@ -90,7 +89,7 @@
       <workItem from="1704080492634" duration="405000" />
       <workItem from="1704082447602" duration="1667000" />
       <workItem from="1704084142692" duration="355000" />
-      <workItem from="1704939150614" duration="1584000" />
+      <workItem from="1704939150614" duration="2078000" />
     </task>
     <servers />
   </component>

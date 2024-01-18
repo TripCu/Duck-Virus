@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64130145-63ae-40f9-ae8a-7402e66c5a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SoundPlayerUsingClip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DuckSprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DuckSprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Watcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Watcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SoundPlayerUsingClip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SoundPlayerUsingClip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
       <recent name="C:\Users\wolfp\IdeaProjects\Duck boy\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DuckSprite">
     <configuration name="DuckSprite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DuckSprite" />
       <module name="Duck boy" />

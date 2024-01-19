@@ -21,7 +21,7 @@ public class DuckSprite extends JPanel {
     public DuckSprite() {
         // Load the duck image with transparency
         try {
-            duckImage = ImageIO.read(new File("C:\\Users\\FrameUser\\Documents\\GitHub\\Duck-Virus\\src\\duck_sprite.png"));
+            duckImage = ImageIO.read(new File("C:\\Users\\wolfp\\IdeaProjects\\Duck boy\\src\\duck_sprite.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,6 +42,7 @@ public class DuckSprite extends JPanel {
                 }
             }
         };
+
         addMouseListener(ma);
         addMouseMotionListener(ma);
     }
@@ -59,8 +60,7 @@ public class DuckSprite extends JPanel {
                     } else {
                         movementTimer.stop();
                     }
-                }
-                else if (e.getKeyCode() == KeyEvent.VK_F12) {
+                } else if (e.getKeyCode() == KeyEvent.VK_F12) {
                     setUIDarkTheme();
                     String userInput = JOptionPane.showInputDialog(frame, "Enter passcode to exit:");
                     if (passcode.equals(userInput)) {
@@ -69,6 +69,18 @@ public class DuckSprite extends JPanel {
                         JOptionPane.showMessageDialog(frame, "Incorrect passcode.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     resetUIDefaults();
+                }
+                if (e.getKeyCode() == KeyEvent.VK_F2) {
+                    try {
+                        // Command to launch a new instance of DuckSprite
+                        String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+                        String classpath = System.getProperty("java.class.path");
+                        String className = DuckSprite.class.getName();
+
+                        new ProcessBuilder(javaBin, "-cp", classpath, className).start();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
             }
         });

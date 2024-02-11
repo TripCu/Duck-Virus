@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64130145-63ae-40f9-ae8a-7402e66c5a6e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DuckSprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DuckSprite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +105,10 @@
       <workItem from="1705014681616" duration="1338000" />
       <workItem from="1705692986788" duration="18000" />
       <workItem from="1705693273384" duration="13000" />
+      <workItem from="1705783077573" duration="1334000" />
+      <workItem from="1705975496446" duration="695000" />
+      <workItem from="1705976571037" duration="82000" />
+      <workItem from="1706499593625" duration="27000" />
     </task>
     <servers />
   </component>
